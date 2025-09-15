@@ -14,6 +14,13 @@ pipeline {
             steps {
                 bat 'mvn clean test'
             }
+
+            stage('Verify Reports') {
+            steps {
+                // List all files in target/ to confirm report generation
+                bat 'dir target /s'
+            }
+        }
         }
         stage('Publish Reports') {
             steps {
