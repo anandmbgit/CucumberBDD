@@ -15,18 +15,18 @@ pipeline {
                 bat 'mvn clean test'
             }
         }
-            
+    }     
         
-        stage('Publish HTML Report') {
-            steps {
-                
+        post{
+           always{ 
+                                  
                 publishHTML([
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
-                    reportDir: "target/cucumber-html-report",
-                    reportFiles: "ndex.html",
-                    reportName: 'Cucumber HTML Report'
+                    reportDir: 'target',
+                    reportFiles: 'index.html',
+                    reportName: "Cucumber HTML Report"
                 ])
             }
         }
