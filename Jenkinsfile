@@ -15,13 +15,7 @@ pipeline {
                 bat 'mvn clean test'
             }
         }
-             stage('Verify HTML Report') {
-            steps {
-                // Check if the report directory exists and list files
-                bat 'if exist target\\cucumber-html-report dir target\\cucumber-html-report /s'
-   
-            }
-        }
+            
         
         stage('Publish HTML Report') {
             steps {
