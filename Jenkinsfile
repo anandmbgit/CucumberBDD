@@ -24,8 +24,8 @@ pipeline {
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
-                    reportDir: 'target/cucumber-html-report',
-                    reportFiles: 'index.html',
+                    reportDir: "target/cucumber-html-report",
+                    reportFiles: "ndex.html",
                     reportName: 'Cucumber HTML Report'
                 ])
             }
