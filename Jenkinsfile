@@ -15,16 +15,16 @@ pipeline {
                 bat 'mvn clean test'
             }
         }
-            stage('Verify Reports') {
+            stage('Verify HTML Report') {
             steps {
                 // List all files in target/ to confirm report generation
-                bat 'dir target /s'
+               bat 'dir target\\cucumber-html-report /s'
             }
         }
         
-        stage('Publish Reports') {
+        stage('Publish HTML Report') {
             steps {
-                junit 'target/cucumber.xml'
+                
                 publishHTML([
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
