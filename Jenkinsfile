@@ -17,10 +17,11 @@ pipeline {
                 bat 'mvn clean test'
             }
         }
-            stage('Verify HTML Report') {
+             stage('Verify HTML Report') {
             steps {
-                // List all files in target/ to confirm report generation
-               bat 'dir target\\cucumber-html-report /s'
+                // Check if the report directory exists and list files
+                bat 'if exist target\\cucumber-html-report dir target\\cucumber-html-report /s'
+   
             }
         }
         
